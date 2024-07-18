@@ -1,0 +1,32 @@
+import random
+
+def play_hand_cricket():
+    print("Welcome to Hand Cricket!")
+    print("You are batting. Enter a number between 1 and 6 to bat:")
+
+    total_score = 0
+    while True:
+        user_input = input("Your turn: ")
+        if not user_input.isdigit():
+            print("Please enter a valid number between 1 and 6.")
+            continue
+        user_number = int(user_input)
+        if user_number < 1 or user_number > 6:
+            print("Please enter a number between 1 and 6.")
+            continue
+
+        computer_number = random.randint(1, 6)
+        print(f"Computer's number: {computer_number}")
+
+        if user_number == computer_number:
+            print("Out!")
+            break
+        else:
+            total_score += user_number
+            print(f"Your current score: {total_score}")
+
+    print(f"Your final score: {total_score}")
+    print("Game over!")
+
+if __name__ == "__main__":
+    play_hand_cricket()
